@@ -1,0 +1,4 @@
+KeepEmptyLinesAtTheStartOfBlocks: false
+Language: Cpp
+Standard: c++17
+ColumnLimit: 140
