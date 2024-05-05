@@ -1,4 +1,3 @@
-#include <set>
 #include <vulkan/vulkan_core.h>
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
@@ -9,6 +8,7 @@
 #include <iostream>
 #include <optional>
 #include <ostream>
+#include <set>
 #include <stdexcept>
 #include <sys/types.h>
 #include <vector>
@@ -263,7 +263,7 @@ private:
     QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 
     std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
-    std::set<uint32_t> uniqueQueueFamilies = {indices.graphicsFamily.has_value(), indices.presentFamily.has_value()};
+    std::set<uint32_t> uniqueQueueFamilies = {indices.graphicsFamily.value(), indices.presentFamily.value()};
 
     float queuePriority = 1.0f;
     for (uint32_t queueFamily : uniqueQueueFamilies) {
